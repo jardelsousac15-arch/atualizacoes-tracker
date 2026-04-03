@@ -15,7 +15,7 @@ Aplicação web para rastrear atualizações/futuras anotações com Flask + SQL
 4. Configurar:
    - **Root Directory:** (vazio)
    - **Build Command:** (vazio - não usa build)
-   - **Start Command:** `python web_app.py`
+   - **Start Command:** `gunicorn web_app:app --bind 0.0.0.0:$PORT`
    - **Plan:** Free
 5. Clicar em "Create Web Service"
 
