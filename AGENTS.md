@@ -7,17 +7,19 @@ Aplicação web para rastrear atualizações/futuras anotações com Flask + SQL
 - `web_app.py` - App principal (deploy Railway)
 - `utils.py` - Funções auxiliares de fuso horário
 
-## Deploy
-```bash
-cd C:\Users\jarde\Documents\.agent\skills\skills\atualizacoes-tracker
-"C:\Program Files\Git\cmd\git.exe" init
-"C:\Program Files\Git\cmd\git.exe" add -A
-"C:\Program Files\Git\cmd\git.exe" commit -m "primeiro commit"
-"C:\Program Files\Git\cmd\git.exe" branch -M main
-"C:\Program Files\Git\cmd\git.exe" remote add origin https://github.com/SEU_USUARIO/atualizacoes-tracker.git
-"C:\Program Files\Git\cmd\git.exe" push -u origin main
-```
-Conectar o repositório no Railway e fazer deploy automático.
+## Deploy no Render
+
+1. Criar repositório no GitHub
+2. Acessar [render.com](https://render.com) → New → Web Service
+3. Conectar GitHub e selecionar o repositório
+4. Configurar:
+   - **Root Directory:** (vazio)
+   - **Build Command:** (vazio - não usa build)
+   - **Start Command:** `python web_app.py`
+   - **Plan:** Free
+5. Clicar em "Create Web Service"
+
+Aguardar deploy (~1-2 minutos). URL será algo como: `https://atualizacoes-tracker.onrender.com`
 
 ## Funcionalidades
 - Adicionar atualização/nota com título e descrição
